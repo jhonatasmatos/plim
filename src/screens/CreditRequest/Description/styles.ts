@@ -1,12 +1,13 @@
 import styled from 'styled-components/native';
 import { RectButton } from 'react-native-gesture-handler';
 
-export const Container = styled.View`
-  flex: 1;
+export const Container = styled.KeyboardAvoidingView`
+  flex: 1; 
+  padding: 0 16px;
 `
 
 export const ContainerText = styled.View`
-  margin-top: 32px;
+  margin-top: 120px;
   padding: 0 35px;
 `
 
@@ -16,50 +17,19 @@ export const Text = styled.Text`
 `
 
 export const ContainerInput = styled.View`
-  margin-top: 32px;
+  margin-top: 76px;
   padding: 0 35px;
 `
 
 export const InputText = styled.TextInput`
   font-size: 16px;
-  text-align: right;
   padding: 0 10px;
   
   border-bottom-width: 1px;
 `
 
-export const ContainerPicker = styled.View`
-  margin: 32px 35px 0px;
-
-  border-bottom-width: 1px;
-`
-
-export const Picker = styled.Picker`
-  border: 1px solid;
-`
-
-export const TextPercent = styled.Text`
-  font-size: 14px;
-  text-align: right;
-
-  padding: 4px 35px;
-`
-
-export const ContainerAttention = styled.View`
-  margin: 32px 65px;
-
-  align-items: center;
-  justify-content: center;
-
-  width: 280px; 
-`
-
-export const TextAttention = styled.Text`
-  font-size: 16px;
-`
-
 export const ContainerButton = styled.View`
-  margin: 32px 65px;
+  margin: 186px 65px;
 
   align-items: center;
   justify-content: center;

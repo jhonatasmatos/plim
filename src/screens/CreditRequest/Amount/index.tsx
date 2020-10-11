@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
+import {useNavigation} from '@react-navigation/native';
 
-import { 
-  Container, 
-  ContainerText, 
-  Text, 
-  ContainerInput, 
+import {
+  Container,
+  ContainerText,
+  Text,
+  ContainerInput,
   InputText,
   ContainerPicker,
   Picker,
@@ -13,14 +14,20 @@ import {
   TextAttention,
   ContainerButton,
   Button,
-  TextButton 
+  TextButton,
 } from './styles';
 
-import Header from '../../components/Header';
+import Header from '../../../components/Header';
 
-const Home: React.FC = () => {
+const Amount: React.FC = () => {
   const [amount, setAmount] = useState('');
-  const [selectedValue, setSelectedValue] = useState("java");
+  const [selectedValue, setSelectedValue] = useState<string>('value_1');
+
+  const navigation = useNavigation();
+
+  async function handleContinue(): Promise<void> {
+    navigation.navigate('Description');
+  }
 
   return (
     <Container>
@@ -31,10 +38,10 @@ const Home: React.FC = () => {
       </ContainerText>
 
       <ContainerInput>
-        <InputText 
+        <InputText
           keyboardType='numeric'
           value={amount}
-         onChangeText={text => setAmount(text)}
+          onChangeText={(text) => setAmount(text)}
         />
       </ContainerInput>
 
@@ -43,9 +50,10 @@ const Home: React.FC = () => {
       </ContainerText>
 
       <ContainerPicker>
-        <Picker 
+        <Picker
           selectedValue={selectedValue}
-          onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
+          onValueChange={(itemValue, itemIndex) =>
+            setSelectedValue(itemValue as string)}
         >
           <Picker.Item label="5 vezes de R$ 1.159,27" value="value_1" />
           <Picker.Item label="1 vezes de R$ 5.000,00" value="value_2" />
@@ -54,16 +62,18 @@ const Home: React.FC = () => {
       <TextPercent>taxa de 3% a.m</TextPercent>
 
       <ContainerAttention>
-        <TextAttention>Atençao!! Toda e qualquer inadimplencia sera cobrada juros a parte.</TextAttention>
+        <TextAttention>
+          Atençao!! Toda e qualquer inadimplencia sera cobrada juros a parte.
+        </TextAttention>
       </ContainerAttention>
 
       <ContainerButton>
-        <Button>
+        <Button onPress={handleContinue}>
           <TextButton>Continuar solicitação</TextButton>
         </Button>
       </ContainerButton>
     </Container>
-  )
-}
+  );
+};
 
-export default Home
+export default Amount;
