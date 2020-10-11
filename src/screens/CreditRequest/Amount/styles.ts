@@ -1,5 +1,6 @@
 import styled from 'styled-components/native';
 import { RectButton } from 'react-native-gesture-handler';
+import { Picker as Selected } from '@react-native-community/picker';
 
 export const Container = styled.View`
   flex: 1;
@@ -34,7 +35,7 @@ export const ContainerPicker = styled.View`
   border-bottom-width: 1px;
 `
 
-export const Picker = styled.Picker`
+export const Picker = styled(Selected)`
   border: 1px solid;
 `
 
