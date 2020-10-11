@@ -54,9 +54,17 @@ const EntrepreneursList: React.FC = () => {
     [navigation]
   );
 
+  const handleContribute = useCallback(
+    () => {
+      navigation.navigate('ContributionAmount');
+    },
+    [navigation]
+  );
+
   return(
     <Container>
       <List
+        showsVerticalScrollIndicator={false}
         data={mock}
         keyExtractor={item => String(item.id)}
         renderItem={({ item }) => (
@@ -91,7 +99,7 @@ const EntrepreneursList: React.FC = () => {
                 </ButtonTextViewMore>
               </ButtonViewMore>
 
-              <ButtonContribute onPress={() => {}}>
+              <ButtonContribute onPress={handleContribute}>
                 <ButtonTextContribute>
                   CONTRIBUA
                 </ButtonTextContribute>
