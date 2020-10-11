@@ -33,6 +33,13 @@ const DetailCompany: React.FC = () => {
     [navigation]
   );
 
+  const handleContribute = useCallback(
+    () => {
+      navigation.navigate('ContributionAmount');
+    },
+    [navigation]
+  );
+
   return(
     <Container>
       <Header />
@@ -74,7 +81,7 @@ const DetailCompany: React.FC = () => {
             </ButtonTextGoBack>
           </ButtonGoBack>
 
-          <ButtonContribute onPress={() => {}}>
+          <ButtonContribute onPress={handleContribute}>
             <ButtonTextContribute>
               CONTRIBUA
             </ButtonTextContribute>

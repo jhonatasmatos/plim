@@ -38,7 +38,7 @@ export const ContentCompany = styled.View`
   padding: 0 26px;
 
   position: absolute;
-  bottom: -25;
+  bottom: -25px;
   background-color: #EEEDFF;
 `;
 
