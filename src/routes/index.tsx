@@ -16,6 +16,12 @@ import ConfirmInfos from '../screens/CreditRequest/ConfirmInfos';
 import CongratsRequest from '../screens/CreditRequest/CongratsRequest';
 
 import Dashboard from '../screens/Dashboard';
+import CancelReturn from '../screens/Cancel/CancelReturn';
+import CongratsCancel from '../screens/Cancel/CongratsCancel';
+
+import Reading from '../screens/WithdrawMoney/Reading';
+import PixId from '../screens/WithdrawMoney/PixId';
+import CongratsWithdraw from '../screens/WithdrawMoney/CongratsWithdraw';
 
 import List from '../screens/CreditContribution/EntrepreneursList';
 import DetailCompany from '../screens/CreditContribution/DetailCompany';
@@ -41,6 +47,12 @@ const Routes: React.FC = () => (
       <App.Screen name="CongratsRequest" component={CongratsRequest} />
 
       <App.Screen name="Dashboard" component={Dashboard} />
+      <App.Screen name="CancelReturn" component={CancelReturn} />
+      <App.Screen name="CongratsCancel" component={CongratsCancel} />
+
+      <App.Screen name="Reading" component={Reading} />
+      <App.Screen name="PixId" component={PixId} />
+      <App.Screen name="CongratsWithdraw" component={CongratsWithdraw} />
 
       <App.Screen name="List" component={List} />
       <App.Screen name="DetailCompany" component={DetailCompany} />
