@@ -22,13 +22,32 @@ export const Text = styled.Text`
   padding: 14px 32px;
 `;
 
-export const Input = styled.TextInput`
+export const ContainerInput = styled.View`
   width: 340px;
-  font-size: 16px;
-  text-align: right;
-  padding: 10px 10px;
+  height: 52px;
+  flex-direction: row;
+  justify-content: space-between;
   
   border-bottom-width: 1px;
+`;
+
+export const Cifrao = styled.Text`
+  font-family: 'Poppins-SemiBold';
+  font-size: 16px;
+
+  padding: 20px 0px 0px 26px;
+`;
+
+export const Input = styled.TextInput`
+  width: 250px;
+  height: 52px;
+  
+  font-family: 'Poppins-Regular';
+  font-size: 16px;
+  text-align: right;
+  justify-content: center;
+
+  margin-top: 10px;
 `;
 
 export const ContainerAmountButtons = styled.View`

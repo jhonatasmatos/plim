@@ -5,6 +5,8 @@ import {
   Container,
   Title,
   Text,
+  ContainerInput,
+  Cifrao,
   Input,
   ContainerAmountButtons,
   AmountButton,
@@ -49,12 +51,15 @@ const ContributionAmount: React.FC = () => {
 
       <Text>Você receberá seu dinheiro em 10 parcelas iguais com correção de 2% a.m</Text>
     
-      <Input 
-        keyboardType='numeric'
-        value={amount}
-        onChangeText={(text) => setAmount(text)}
-      />
-
+      <ContainerInput>
+        <Cifrao>R$</Cifrao>
+        <Input 
+          keyboardType='numeric'
+          value={amount}
+          onChangeText={(text) => setAmount(text)}
+        />
+      </ContainerInput>
+      
       <ContainerAmountButtons>
         <AmountButton>
           <AmountButtonText>+10</AmountButtonText>
