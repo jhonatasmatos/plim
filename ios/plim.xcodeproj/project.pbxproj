@@ -20,6 +20,10 @@
 		6EA997EA4056DE20E1026DED /* libPods-plim-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DA6D70EF52F675F1FF527B /* libPods-plim-tvOS.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		CBD07D6B9762B4F95DCE48CC /* libPods-plim.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 275A5277C68710FA9934D002 /* libPods-plim.a */; };
+		832197494F02476F93C2A813 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8B8678F23344B788557A4A1 /* Poppins-Regular.ttf */; };
+		6AF1530C924E400F89AA6790 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67ED0A53923F4C05B529CAF3 /* Poppins-SemiBold.ttf */; };
+		C278D4A2CD6346A48CC34D98 /* TitilliumWeb-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B9EAD458CD8C411E99066155 /* TitilliumWeb-Bold.ttf */; };
+		7DB0F1A3FB9F4E388C0E76B8 /* TitilliumWeb-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6342187BFA84C45B43A251F /* TitilliumWeb-SemiBold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +71,10 @@
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		F88F76B4A5EC9A3922C366DE /* Pods-plim.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-plim.debug.xcconfig"; path = "Target Support Files/Pods-plim/Pods-plim.debug.xcconfig"; sourceTree = "<group>"; };
+		E8B8678F23344B788557A4A1 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; name = "Poppins-Regular.ttf"; path = "../assets/fonts/Poppins-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		67ED0A53923F4C05B529CAF3 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; name = "Poppins-SemiBold.ttf"; path = "../assets/fonts/Poppins-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B9EAD458CD8C411E99066155 /* TitilliumWeb-Bold.ttf */ = {isa = PBXFileReference; name = "TitilliumWeb-Bold.ttf"; path = "../assets/fonts/TitilliumWeb-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C6342187BFA84C45B43A251F /* TitilliumWeb-SemiBold.ttf */ = {isa = PBXFileReference; name = "TitilliumWeb-SemiBold.ttf"; path = "../assets/fonts/TitilliumWeb-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +173,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				C548CBC6295959AFF750F3D4 /* Pods */,
+				AEF0484A0A3E4AC19999559E /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -197,6 +206,18 @@
 			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		AEF0484A0A3E4AC19999559E /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				E8B8678F23344B788557A4A1 /* Poppins-Regular.ttf */,
+				67ED0A53923F4C05B529CAF3 /* Poppins-SemiBold.ttf */,
+				B9EAD458CD8C411E99066155 /* TitilliumWeb-Bold.ttf */,
+				C6342187BFA84C45B43A251F /* TitilliumWeb-SemiBold.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -342,6 +363,10 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				832197494F02476F93C2A813 /* Poppins-Regular.ttf in Resources */,
+				6AF1530C924E400F89AA6790 /* Poppins-SemiBold.ttf in Resources */,
+				C278D4A2CD6346A48CC34D98 /* TitilliumWeb-Bold.ttf in Resources */,
+				7DB0F1A3FB9F4E388C0E76B8 /* TitilliumWeb-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
