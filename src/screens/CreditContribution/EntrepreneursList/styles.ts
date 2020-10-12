@@ -2,12 +2,13 @@ import styled from 'styled-components/native';
 import { FlatList } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
 
-interface Company {
+interface Request {
   id: number;
-  image: string;
-  name: string;
-  amount: number;
-  installment: number;
+  nomeNegocio: string;
+  motivo: string;
+  valor: number;
+  urlImagem: string;
+  quantidadeParcelasReembolso: number;
 }
 
 export const Container = styled.View`
@@ -15,7 +16,7 @@ export const Container = styled.View`
   background-color: #E5E5E5;
 `;
 
-export const List = styled(FlatList as new () => FlatList<Company>)`
+export const List = styled(FlatList as new () => FlatList<Request>)`
   flex: 1;
   padding: 0 20px;
   margin-top: 16px;
@@ -40,10 +41,11 @@ export const CompanyImageContainer = styled.View`
 
 export const CompanyContent = styled.View`
   flex: 1;
-  width: 100%;
+  width: 360px;
 `;
 
 export const CompanyInfo= styled.View`
+  width: 320px;
   flex-direction: row;
   justify-content: space-between;
 
@@ -73,14 +75,14 @@ export const CompanyInstallment = styled.Text`
 `;
 
 export const ContainerButton = styled.View`
+  width: 300px;
+
   padding-bottom: 12px;
-  width: 100%;
   flex-direction: row;
-  justify-content: space-around;
 `;
 
 export const ButtonViewMore = styled(RectButton)`
-  width: 152px;
+  width: 125px;
   height: 54px;
   border-radius: 14px;
 
@@ -97,12 +99,14 @@ export const ButtonTextViewMore = styled.Text`
 `;
 
 export const ButtonContribute = styled(RectButton)`
-  width: 152px;
+  width: 125px;
   height: 54px;
   border-radius: 14px;
 
   justify-content: center;
   align-items: center;
+
+  margin-left: 10px;
 
   background-color: #20187D;
 `;
