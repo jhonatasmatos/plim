@@ -21,19 +21,16 @@ export const LinkText = styled.Text`
   font-family: 'Poppins-SemiBold';
   font-size: 16px;
 
-  padding: 16px 36px 26px 170px;
+  padding: 0px 36px 0px 170px;
 
   color: #20187D;
 `;
 
-export const Chart = styled.View`
-  width: 120px;
-  height: 120px;
-  border-radius: 70px;
+export const ChartContainer = styled.View`
+  width: 100%;
+  height: 170px;
 
   margin-bottom: 36px;
-
-  background-color: #aa00aa;
 `;
 
 export const CompanyInfo= styled.View`
@@ -44,17 +41,17 @@ export const CompanyInfo= styled.View`
 `;
 
 export const Label= styled.Text`
+  font-family: 'Poppins-Regular';
+  font-size: 16px;
+`;
+
+export const RequestedAmount = styled.Text`
   font-family: 'Poppins-SemiBold';
   font-size: 16px;
 `;
 
-export const CompanyAmount = styled.Text`
-  font-family: 'Poppins-Regular';
-  font-size: 16px;
-`;
-
-export const CompanyInstallment = styled.Text`
-  font-family: 'Poppins-Regular';
+export const TotalAmount = styled.Text`
+  font-family: 'Poppins-SemiBold';
   font-size: 16px;
 `;
 

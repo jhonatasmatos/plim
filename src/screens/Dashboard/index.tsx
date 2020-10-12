@@ -1,16 +1,17 @@
 import React, { useCallback } from 'react';
 import {useNavigation} from '@react-navigation/native';
+import { PieChart } from 'react-native-svg-charts';
 
 import { 
   Container,
   Title,
   Link,
   LinkText,
-  Chart,
+  ChartContainer,
   CompanyInfo,
   Label,
-  CompanyAmount,
-  CompanyInstallment,
+  RequestedAmount,
+  TotalAmount,
   ContainerButton,
   ButtonCancel,
   ButtonTextCancel,
@@ -25,17 +26,33 @@ const Dashboard: React.FC = () => {
 
   const handleCancel = useCallback(
     () => {
-      navigation.goBack();
+      navigation.navigate('CancelReturn');
     },
     [navigation]
   );
 
   const handleFinish = useCallback(
     () => {
-      navigation.navigate('CancelReturn');
+      navigation.navigate('Reading');
     },
     [navigation]
   );
+
+  const data = [50, 20]
+
+  const randomColor = () => ('#' + ((Math.random() * 333) << 0).toString() + '86ddd4').slice(0, 7)
+
+  const pieData = data
+      .filter((value) => value > 0)
+      .map((value, index) => ({
+          value,
+          svg: {
+              fill: randomColor(),
+              onPress: () => console.log('press', index),
+          },
+          key: `pie-${index}`,
+      }))
+
   return(
     <>
       <Header title='Acompanhe sua solicitação' />
@@ -45,18 +62,18 @@ const Dashboard: React.FC = () => {
           <LinkText>EDITAR DADOS DO PEDIDO</LinkText>
         </Link>
 
-        <Chart>
-
-        </Chart>
+        <ChartContainer>
+          <PieChart style={{ height: 170 }} data={pieData} />
+        </ChartContainer>
 
         <CompanyInfo>
           <Label>Voce solicitou: </Label>
-          <CompanyAmount>R$ 5.000,00</CompanyAmount>
+          <RequestedAmount>R$ 5.000,00</RequestedAmount>
         </CompanyInfo>
 
         <CompanyInfo>
           <Label>Total acumulado:</Label>
-          <CompanyInstallment>R$ 3.000,00</CompanyInstallment>
+          <TotalAmount>R$ 3.000,00</TotalAmount>
         </CompanyInfo>
 
         <ContainerButton>
