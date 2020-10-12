@@ -22,17 +22,21 @@ export const ContainerText = styled.View`
 `;
 
 export const Title = styled.Text`
+  font-family: 'TitilliumWeb-Bold';
   font-size: 24px;
-  font-weight: 700;
 `;
 
 export const Text = styled.Text`
+  font-family: 'Poppins-Regular';
   font-size: 16px;
   padding-top: 14px;
 `;
 
 export const ContainerButton = styled.View`
   flex: 1;
+
+  position: absolute;
+  bottom: 36px;
 `;
 
 export const ButtonDone = styled(RectButton)`
@@ -50,6 +54,7 @@ export const ButtonDone = styled(RectButton)`
 
 export const ButtonTextDone = styled.Text`
   color: #fff;
+
+  font-family: 'Poppins-SemiBold';
   font-size: 16px;
-  font-weight: 700;
 `;

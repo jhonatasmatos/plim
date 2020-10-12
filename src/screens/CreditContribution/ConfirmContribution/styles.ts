@@ -4,18 +4,22 @@ import styled from 'styled-components/native';
 export const Container = styled.View`
   flex: 1;
 
-  margin-top: 76px;
+  padding-top: 76px;
+
+  background-color: #E5E5E5;
 `;
 
 export const Title = styled.Text`
+  font-family: 'TitilliumWeb-Bold';
   font-size: 24px;
-  font-weight: 700;
 
   padding-left: 36px;
 `;
 
 export const Text = styled.Text`
   width: 340px;
+
+  font-family: 'Poppins-Regular';
   font-size: 16px;
   margin-top: 16px;
 
@@ -43,6 +47,7 @@ export const ButtonGoBack = styled(RectButton)`
 `;
 
 export const ButtonTextGoBack = styled.Text`
+  font-family: 'Poppins-SemiBold';
   font-size: 16px;
   color: #F70F5D;
 `;
@@ -59,6 +64,7 @@ export const ButtonConfirm = styled(RectButton)`
 `;
 
 export const ButtonTextConfirm = styled.Text`
+  font-family: 'Poppins-SemiBold';
   font-size: 16px;
   color: #fff;
 `;

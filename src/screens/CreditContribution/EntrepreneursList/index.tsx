@@ -19,6 +19,7 @@ import {
   ButtonContribute,
   ButtonTextContribute
 } from './styles';
+import Header from '../../../components/Header';
 
 const mock = [
   {
@@ -62,53 +63,56 @@ const EntrepreneursList: React.FC = () => {
   );
 
   return(
-    <Container>
-      <List
-        showsVerticalScrollIndicator={false}
-        data={mock}
-        keyExtractor={item => String(item.id)}
-        renderItem={({ item }) => (
-          <Company>
-            <CompanyImageContainer>
-              <Image
-                style={
-                  { width: '100%', height: '100%' }
-                }
-                source={{ uri: item.image }}
-              />
-            </CompanyImageContainer>
+    <>
+      <Header title='Seu bairro precisa de você!' />
+      <Container>
+        <List
+          showsVerticalScrollIndicator={false}
+          data={mock}
+          keyExtractor={item => String(item.id)}
+          renderItem={({ item }) => (
+            <Company>
+              <CompanyImageContainer>
+                <Image
+                  style={
+                    { width: '100%', height: '100%' }
+                  }
+                  source={{ uri: item.image }}
+                />
+              </CompanyImageContainer>
 
-            <CompanyContent>
-              <CompanyTitle>{item.name}</CompanyTitle>
+              <CompanyContent>
+                <CompanyTitle>{item.name}</CompanyTitle>
 
-              <CompanyInfo>
-                <Label>Preciso em: </Label>
-                <CompanyAmount>{item.amount}</CompanyAmount>
-              </CompanyInfo>
+                <CompanyInfo>
+                  <Label>Preciso em: </Label>
+                  <CompanyAmount>{item.amount}</CompanyAmount>
+                </CompanyInfo>
 
-              <CompanyInfo>
-                <Label>Pagarei em: </Label>
-                <CompanyInstallment>{item.installment}</CompanyInstallment>
-              </CompanyInfo>
-            </CompanyContent>
+                <CompanyInfo>
+                  <Label>Pagarei em: </Label>
+                  <CompanyInstallment>{item.installment}</CompanyInstallment>
+                </CompanyInfo>
+              </CompanyContent>
 
-            <ContainerButton>
-              <ButtonViewMore onPress={() => handleViewMore(item.id)}>
-                <ButtonTextViewMore>
-                  VER MAIS
-                </ButtonTextViewMore>
-              </ButtonViewMore>
+              <ContainerButton>
+                <ButtonViewMore onPress={() => handleViewMore(item.id)}>
+                  <ButtonTextViewMore>
+                    VER MAIS
+                  </ButtonTextViewMore>
+                </ButtonViewMore>
 
-              <ButtonContribute onPress={handleContribute}>
-                <ButtonTextContribute>
-                  CONTRIBUA
-                </ButtonTextContribute>
-              </ButtonContribute>
-            </ContainerButton>
-          </Company>
-        )}
-      />
-    </Container>
+                <ButtonContribute onPress={handleContribute}>
+                  <ButtonTextContribute>
+                    CONTRIBUA
+                  </ButtonTextContribute>
+                </ButtonContribute>
+              </ContainerButton>
+            </Company>
+          )}
+        />
+      </Container>
+    </>
   );
 }
 

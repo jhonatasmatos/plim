@@ -41,7 +41,7 @@ const ConfirmContribution: React.FC = () => {
 
   return(
     <>
-      <Header />
+      <Header title='Confirmar contribuição' />
       <Container>
         <Title>Leia atentamente</Title>
 

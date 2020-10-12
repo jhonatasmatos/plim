@@ -42,8 +42,6 @@ const DetailCompany: React.FC = () => {
 
   return(
     <Container>
-      <Header />
-
       <ContainerImageCompany>
         <Image
           style={

@@ -40,7 +40,7 @@ const CreditCardData: React.FC = () => {
 
   return(
     <>
-    <Header />
+    <Header title='Dados do cartão' />
     <Container>
       <Input
         placeholder='Número do cartão' 

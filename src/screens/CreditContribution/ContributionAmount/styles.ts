@@ -4,15 +4,20 @@ import styled from 'styled-components/native';
 export const Container = styled.View`
   flex: 1;
   align-items: center;
+  background-color: #E5E5E5;
 `;
 
 export const Title = styled.Text`
   width: 400px;
+
+  font-family: 'TitilliumWeb-Bold';
   font-size: 22px;
-  padding: 18px 66px 18px 32px;
+
+  padding: 0px 66px 18px 32px;
 `;
 
 export const Text = styled.Text`
+  font-family: 'Poppins-Regular';
   font-size: 16px;
   padding: 14px 32px;
 `;
@@ -46,6 +51,7 @@ export const AmountButton = styled(RectButton)`
 `;
 
 export const AmountButtonText = styled.Text`
+  font-family: 'Poppins-Regular';
   font-size: 14px;
   color: #fff;
 `;
@@ -55,23 +61,22 @@ export const CompanyInfo= styled.View`
   flex-direction: row;
   justify-content: space-between;
 
-  padding: 16px 24px;
+  padding: 12px 24px;
 `;
 
 export const Label= styled.Text`
+  font-family: 'Poppins-Regular';
   font-size: 16px;
 `;
 
 export const FutureAmount = styled.Text`
+  font-family: 'Poppins-SemiBold';
   font-size: 16px;
-
-  font-weight: 700;
 `;
 
 export const FinalAmount = styled.Text`
+  font-family: 'Poppins-SemiBold';
   font-size: 16px;
-
-  font-weight: 700;
 `;
 
 export const ContainerButton = styled.View`
@@ -93,6 +98,7 @@ export const ButtonGoBack = styled(RectButton)`
 `;
 
 export const ButtonTextGoBack = styled.Text`
+  font-family: 'Poppins-SemiBold';
   font-size: 16px;
   color: #F70F5D;
 `;
@@ -109,6 +115,7 @@ export const ButtonPayment = styled(RectButton)`
 `;
 
 export const ButtonTextPayment = styled.Text`
+  font-family: 'Poppins-SemiBold';
   font-size: 16px;
   color: #fff;
 `;

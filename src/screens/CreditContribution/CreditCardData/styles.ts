@@ -1,12 +1,13 @@
 import { RectButton } from 'react-native-gesture-handler';
-import { KeyboardAvoidingView } from 'react-native'
 import styled from 'styled-components/native';
 
-export const Container = styled(KeyboardAvoidingView)`
+export const Container = styled.View`
   flex: 1;
   align-items: center;
 
-  margin-top: 72px;
+  padding-top: 72px;
+
+  background-color: #E5E5E5;
 `;
 
 export const ContainerInput = styled.View`
@@ -46,10 +47,13 @@ export const CvcInput = styled.TextInput`
 `;
 
 export const ContainerButton = styled.View`
-  margin: 162px 0;
   width: 100%;
   flex-direction: row;
   justify-content: space-around;
+
+
+  position: absolute;
+  bottom: 26px;
 `;
 
 export const ButtonGoBack = styled(RectButton)`
@@ -64,6 +68,7 @@ export const ButtonGoBack = styled(RectButton)`
 `;
 
 export const ButtonTextGoBack = styled.Text`
+  font-family: 'Poppins-SemiBold';
   font-size: 16px;
   color: #F70F5D;
 `;
@@ -80,6 +85,7 @@ export const ButtonFinish = styled(RectButton)`
 `;
 
 export const ButtonTextFinish = styled.Text`
+  font-family: 'Poppins-SemiBold';
   font-size: 16px;
   color: #fff;
 `;
