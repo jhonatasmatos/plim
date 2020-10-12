@@ -6,6 +6,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Splash from '../screens/Splash';
 import First from '../screens/First';
 
+import License from '../screens/CreditRequest/License';
+import Profile from '../screens/CreditRequest/Profile';
+import Historic from '../screens/CreditRequest/Historic';
 import Amount from '../screens/CreditRequest/Amount';
 import Description from '../screens/CreditRequest/Description';
 
@@ -23,9 +26,11 @@ const Routes: React.FC = () => (
     <App.Navigator screenOptions={{ headerShown: false }}>
       <App.Screen name="Splash" component={Splash} />
       <App.Screen name="First" component={First} />
-
-      {/* <App.Screen name="Amount" component={Amount} />
-      <App.Screen name="Description" component={Description} /> */}
+      <App.Screen name="License" component={License} />
+      <App.Screen name="Profile" component={Profile} />
+      <App.Screen name="Historic" component={Historic} />
+      <App.Screen name="Amount" component={Amount} />
+      <App.Screen name="Description" component={Description} />
 
       <App.Screen name="List" component={List} />
       <App.Screen name="DetailCompany" component={DetailCompany} />
