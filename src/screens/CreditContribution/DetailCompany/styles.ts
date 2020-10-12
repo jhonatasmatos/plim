@@ -52,7 +52,7 @@ export const Title = styled.Text`
 
 export const Description = styled.Text`
   font-family: 'Poppins-Regular';
-  font-size: 16px;
+  font-size: 14px;
   padding-top: 18px;
   padding-bottom: 26px;
 
@@ -82,7 +82,7 @@ export const CompanyInstallment = styled.Text`
 `;
 
 export const ContainerButton = styled.View`
-  padding-top: 36px;
+  margin: 16px 0px;
   width: 100%;
   flex-direction: row;
   justify-content: space-around;

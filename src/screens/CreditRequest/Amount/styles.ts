@@ -19,17 +19,34 @@ export const Text = styled.Text`
 `
 
 export const ContainerInput = styled.View`
-  margin-top: 16px;
-  padding: 0 35px;
-`
+  width: 340px;
+  height: 52px;
+  flex-direction: row;
+  justify-content: space-between;
 
-export const InputText = styled.TextInput`
-  font-size: 16px;
-  text-align: right;
-  padding: 0 10px;
+  margin: 0px 35px;
   
   border-bottom-width: 1px;
-`
+`;
+
+export const Cifrao = styled.Text`
+  font-family: 'Poppins-SemiBold';
+  font-size: 16px;
+
+  padding: 20px 0px 0px 26px;
+`;
+
+export const Input = styled.TextInput`
+  width: 250px;
+  height: 52px;
+  
+  font-family: 'Poppins-Regular';
+  font-size: 16px;
+  text-align: right;
+  justify-content: center;
+
+  margin-top: 10px;
+`;
 
 export const ContainerPicker = styled.View`
   margin: 5px 35px 0px;

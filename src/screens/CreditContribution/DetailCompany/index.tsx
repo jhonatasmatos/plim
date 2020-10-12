@@ -1,6 +1,8 @@
-import React, { useCallback } from 'react';
-import { useNavigation } from '@react-navigation/native';
+import React, { useState, useEffect, useCallback } from 'react';
+import { useNavigation, useRoute } from '@react-navigation/native';
 import { Image } from 'react-native';
+
+import formattedValue from '../../../utils/formatValue';
 
 import { 
   Container,
@@ -21,10 +23,42 @@ import {
   ButtonTextContribute  
 } from './styles';
 
-import Header from '../../../components/Header';
+import api from '../../../services/api';
+
+interface Detail {
+  id: number;
+  nomeNegocio: string;
+  motivo: string;
+  valor: number;
+  urlImagem: string;
+  quantidadeParcelasReembolso: number;
+}
+
+interface Params {
+  id: number;
+}
 
 const DetailCompany: React.FC = () => {
   const navigation = useNavigation();
+
+  const route = useRoute();
+  const routeParams = route.params as Params;
+
+  const [details, setDetails] = useState<Detail>({} as Detail);
+
+  useEffect(() => {
+    const getRequests = async () => {
+
+      try {
+        const response = await api.get(`SolicitacaoCredito/${routeParams.id}`);
+
+        setDetails(response.data)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    getRequests();
+  },[])
 
   const handleGoBack= useCallback(
     () => {
@@ -47,7 +81,7 @@ const DetailCompany: React.FC = () => {
           style={
             { width: '100%', height: '100%' }
           }
-          source={{ uri: 'https://i.pinimg.com/originals/68/a4/9c/68a49c29cf35874e07fb02d8a647bc35.jpg' }}
+          source={{ uri: details.urlImagem }}
         />
       </ContainerImageCompany>
 
@@ -56,20 +90,18 @@ const DetailCompany: React.FC = () => {
       </ContainerDistance>
 
       <ContentCompany>
-        <Title>Mercado do bairro</Title>
+        <Title>{details.nomeNegocio}</Title>
 
-        <Description>
-          Olá, me chamo Cláudio e sou proprietário do Mercado do Bairro.  Com os aumentos dos custos e a redução de clientes durante a pandemia do Covid 19, o Mercado de Bairro precisa do seu impulsionamento.
-        </Description>
+        <Description>{details.motivo}</Description>
 
         <CompanyInfo>
           <Label>Preciso em: </Label>
-          <CompanyAmount>R$ 10.000,00</CompanyAmount>
+          <CompanyAmount>{formattedValue(details.valor)}</CompanyAmount>
         </CompanyInfo>
 
         <CompanyInfo>
           <Label>Pagarei em: </Label>
-          <CompanyInstallment>10 vezes</CompanyInstallment>
+          <CompanyInstallment>{details.quantidadeParcelasReembolso} vezes</CompanyInstallment>
         </CompanyInfo>
 
         <ContainerButton>
@@ -81,7 +113,7 @@ const DetailCompany: React.FC = () => {
 
           <ButtonContribute onPress={handleContribute}>
             <ButtonTextContribute>
-              CONTRIBUA
+              IMPULSIONAR
             </ButtonTextContribute>
           </ButtonContribute>
         </ContainerButton>
