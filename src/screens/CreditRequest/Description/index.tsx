@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
+import {useNavigation} from '@react-navigation/native';
 import { Platform, ScrollView } from 'react-native';
 
 import { 
@@ -8,8 +9,10 @@ import {
   ContainerInput, 
   InputText,
   ContainerButton,
-  Button,
-  TextButton 
+  ButtonGoBack,
+  ButtonTextGoBack,
+  ButtonContinue,
+  ButtonTextContinue 
 } from './styles';
 
 import Header from '../../../components/Header';
@@ -17,34 +20,59 @@ import Header from '../../../components/Header';
 const Description: React.FC = () => {
   const [description, setDescription] = useState('');
 
+  const navigation = useNavigation();
+
+  const handleGoBack= useCallback(
+    () => {
+      navigation.goBack();
+    },
+    [navigation]
+  );
+
+  const handleContinue = useCallback(
+    () => {
+      navigation.navigate('Photo');
+    },
+    [navigation]
+  );
+
   return (
-    <Container 
-      behavior={Platform.OS === 'ios' ? 'padding' : undefined}
-      enabled
-    >
-      <Header />
+    <>
+      <Header title='Solicitação de micro crédito' />
+      <Container 
+        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+        enabled
+      >
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <ContainerText>
+            <Text>Conte aos seus impulsionadores porque você precisa desse dinheiro</Text>
+          </ContainerText>
 
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <ContainerText>
-          <Text>Conte para nos e para seus contribuidores o que voce fara com esse dinheiro</Text>
-        </ContainerText>
-
-        <ContainerInput>
-          <InputText 
-            keyboardType='default'
-            value={description}
-            onChangeText={text => setDescription(text)}
-            multiline
-          />
-        </ContainerInput>
-
+          <ContainerInput>
+            <InputText 
+              keyboardType='default'
+              value={description}
+              onChangeText={text => setDescription(text)}
+              multiline
+            />
+          </ContainerInput>
+        </ScrollView>
+        
         <ContainerButton>
-          <Button>
-            <TextButton>Continuar solicitação</TextButton>
-          </Button>
+          <ButtonGoBack onPress={handleGoBack}>
+            <ButtonTextGoBack>
+              VOLTAR
+            </ButtonTextGoBack>
+          </ButtonGoBack>
+
+          <ButtonContinue onPress={handleContinue}>
+            <ButtonTextContinue>
+              CONTINUAR
+            </ButtonTextContinue>
+          </ButtonContinue>
         </ContainerButton>
-      </ScrollView>
-    </Container>
+      </Container>
+    </>
   )
 }
 

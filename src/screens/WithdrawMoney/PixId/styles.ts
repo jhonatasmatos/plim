@@ -1,29 +1,18 @@
 import styled from 'styled-components/native';
 import { RectButton } from 'react-native-gesture-handler';
 
-export const Container = styled.KeyboardAvoidingView`
-  flex: 1; 
+export const Container = styled.View`
+  flex: 1;
+
+  justify-content: center;
+  align-items: center;
 
   background-color: #E5E5E5;
 `;
 
-export const ContainerText = styled.View`
-  margin-top: 120px;
-  padding: 0 35px;
-`;
-
-export const Text = styled.Text`
-  font-family: 'Poppins-SemiBold';
-  font-size: 18px;
-  padding-top: 16px;
-`;
-
-export const ContainerInput = styled.View`
-  margin-top: 76px;
-  padding: 0 35px;
-`;
-
 export const InputText = styled.TextInput`
+  width: 320px;
+
   font-size: 16px;
   padding: 0 10px;
   
@@ -34,6 +23,7 @@ export const ContainerButton = styled.View`
   width: 100%;
   flex-direction: row;
   justify-content: space-around;
+
 
   position: absolute;
   bottom: 26px;
@@ -56,7 +46,7 @@ export const ButtonTextGoBack = styled.Text`
   color: #F70F5D;
 `;
 
-export const ButtonContinue = styled(RectButton)`
+export const ButtonConfirm = styled(RectButton)`
   width: 152px;
   height: 54px;
   border-radius: 14px;
@@ -67,7 +57,7 @@ export const ButtonContinue = styled(RectButton)`
   background-color: #20187D;
 `;
 
-export const ButtonTextContinue = styled.Text`
+export const ButtonTextConfirm = styled.Text`
   font-family: 'Poppins-SemiBold';
   font-size: 16px;
   color: #fff;

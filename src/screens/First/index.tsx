@@ -25,7 +25,7 @@ const First: React.FC = () => {
 
   const handleReceiveBoost= useCallback(
     () => {
-      navigation.navigate('Amount');
+      navigation.navigate('License');
     },
     [navigation]
   );
