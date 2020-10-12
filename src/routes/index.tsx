@@ -11,6 +11,11 @@ import Profile from '../screens/CreditRequest/Profile';
 import Historic from '../screens/CreditRequest/Historic';
 import Amount from '../screens/CreditRequest/Amount';
 import Description from '../screens/CreditRequest/Description';
+import Photo from '../screens/CreditRequest/Photo';
+import ConfirmInfos from '../screens/CreditRequest/ConfirmInfos';
+import CongratsRequest from '../screens/CreditRequest/CongratsRequest';
+
+import Dashboard from '../screens/Dashboard';
 
 import List from '../screens/CreditContribution/EntrepreneursList';
 import DetailCompany from '../screens/CreditContribution/DetailCompany';
@@ -31,6 +36,11 @@ const Routes: React.FC = () => (
       <App.Screen name="Historic" component={Historic} />
       <App.Screen name="Amount" component={Amount} />
       <App.Screen name="Description" component={Description} />
+      <App.Screen name="Photo" component={Photo} />
+      <App.Screen name="ConfirmInfos" component={ConfirmInfos} />
+      <App.Screen name="CongratsRequest" component={CongratsRequest} />
+
+      <App.Screen name="Dashboard" component={Dashboard} />
 
       <App.Screen name="List" component={List} />
       <App.Screen name="DetailCompany" component={DetailCompany} />
