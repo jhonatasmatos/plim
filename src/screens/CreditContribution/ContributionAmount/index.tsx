@@ -1,6 +1,8 @@
 import React, { useState, useCallback } from 'react';
 import { useNavigation } from '@react-navigation/native';
 
+import formattedValue from '../../../utils/formatValue';
+
 import { 
   Container,
   Title,
@@ -26,6 +28,8 @@ import Header from '../../../components/Header';
 
 const ContributionAmount: React.FC = () => {
   const [amount, setAmount] = useState('');
+  const [totallValue, setTotalValue] = useState(0);
+  const [finalValue, setFinalValue] = useState(0);
 
   const navigation = useNavigation();
 
@@ -41,6 +45,23 @@ const ContributionAmount: React.FC = () => {
       navigation.navigate('CreditCardData');
     },
     [navigation]
+  );
+
+  const addValue = (value: number) => {
+    const price = Number(amount) + value;
+    const total = String(price)
+    const final = Number(total) * 0.03;
+
+    setAmount(total);
+    setTotalValue(final + price);
+    setFinalValue(final);
+  }
+
+  const calculateFinalValue = useCallback(
+    () => {
+      
+    },
+    [amount]
   );
   
   return(
@@ -61,15 +82,15 @@ const ContributionAmount: React.FC = () => {
       </ContainerInput>
       
       <ContainerAmountButtons>
-        <AmountButton>
+        <AmountButton onPress={() => addValue(10)}>
           <AmountButtonText>+10</AmountButtonText>
         </AmountButton>
 
-        <AmountButton>
+        <AmountButton onPress={() => addValue(100)}>
           <AmountButtonText>+100</AmountButtonText>
         </AmountButton>
 
-        <AmountButton>
+        <AmountButton onPress={() => addValue(500)}>
           <AmountButtonText>+500</AmountButtonText>
         </AmountButton>
       </ContainerAmountButtons>
@@ -78,12 +99,12 @@ const ContributionAmount: React.FC = () => {
 
       <CompanyInfo>
         <Label>Você irá receber:</Label>
-        <FutureAmount>R$ 1.218,93</FutureAmount>
+        <FutureAmount>{formattedValue(totallValue)}</FutureAmount>
       </CompanyInfo>
 
       <CompanyInfo>
         <Label>Ganho total final:</Label>
-        <FinalAmount>R$ 218,93</FinalAmount>
+        <FinalAmount>{formattedValue(finalValue)}</FinalAmount>
       </CompanyInfo>
       
       <ContainerButton>

@@ -1,6 +1,8 @@
-import React, { useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { Image } from 'react-native';
+
+import formattedValue from '../../../utils/formatValue';
 
 import { 
   Container,
@@ -19,34 +21,38 @@ import {
   ButtonContribute,
   ButtonTextContribute
 } from './styles';
+
 import Header from '../../../components/Header';
 
-const mock = [
-  {
-    id: 1,
-    image: 'https://i.pinimg.com/originals/68/a4/9c/68a49c29cf35874e07fb02d8a647bc35.jpg',
-    name: 'Mercado do Bairro',
-    amount: 10000.00,
-    installment: 10
-  },
-  {
-    id: 2,
-    image: 'https://i.pinimg.com/originals/68/a4/9c/68a49c29cf35874e07fb02d8a647bc35.jpg',
-    name: 'Mercado do Bairro',
-    amount: 10000.00,
-    installment: 10
-  },
-  {
-    id: 3,
-    image: 'https://i.pinimg.com/originals/68/a4/9c/68a49c29cf35874e07fb02d8a647bc35.jpg',
-    name: 'Mercado do Bairro',
-    amount: 10000.00,
-    installment: 10
-  }
-]
+import api from '../../../services/api';
+
+interface Request {
+  id: number;
+  nomeNegocio: string;
+  motivo: string;
+  valor: number;
+  urlImagem: string;
+  quantidadeParcelasReembolso: number;
+}
 
 const EntrepreneursList: React.FC = () => {
   const navigation = useNavigation();
+
+  const [requests, setRequests] = useState<Request[]>([])
+
+  useEffect(() => {
+    const getRequests = async () => {
+
+      try {
+        const response = await api.get('SolicitacaoCredito');
+
+        setRequests(response.data)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    getRequests();
+  },[]);
 
   const handleViewMore = useCallback(
     (id: number) => {
@@ -68,7 +74,7 @@ const EntrepreneursList: React.FC = () => {
       <Container>
         <List
           showsVerticalScrollIndicator={false}
-          data={mock}
+          data={requests}
           keyExtractor={item => String(item.id)}
           renderItem={({ item }) => (
             <Company>
@@ -77,21 +83,21 @@ const EntrepreneursList: React.FC = () => {
                   style={
                     { width: '100%', height: '100%' }
                   }
-                  source={{ uri: item.image }}
+                  source={{ uri: item.urlImagem }}
                 />
               </CompanyImageContainer>
 
               <CompanyContent>
-                <CompanyTitle>{item.name}</CompanyTitle>
+                <CompanyTitle>{item.nomeNegocio}</CompanyTitle>
 
                 <CompanyInfo>
-                  <Label>Preciso em: </Label>
-                  <CompanyAmount>{item.amount}</CompanyAmount>
+                  <Label>Preciso de: </Label>
+                  <CompanyAmount>{formattedValue(item.valor)}</CompanyAmount>
                 </CompanyInfo>
 
                 <CompanyInfo>
-                  <Label>Pagarei em: </Label>
-                  <CompanyInstallment>{item.installment}</CompanyInstallment>
+                  <Label>Forma de pagamento: </Label>
+                  <CompanyInstallment>{item.quantidadeParcelasReembolso}x</CompanyInstallment>
                 </CompanyInfo>
               </CompanyContent>
 
@@ -104,7 +110,7 @@ const EntrepreneursList: React.FC = () => {
 
                 <ButtonContribute onPress={handleContribute}>
                   <ButtonTextContribute>
-                    CONTRIBUA
+                    IMPULSIONAR
                   </ButtonTextContribute>
                 </ButtonContribute>
               </ContainerButton>

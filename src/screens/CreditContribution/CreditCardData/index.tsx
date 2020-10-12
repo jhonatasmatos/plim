@@ -59,7 +59,7 @@ const CreditCardData: React.FC = () => {
       <ContainerInput>
         <ExpirationInput 
           placeholder='Expiração'
-          keyboardType='numeric'
+          keyboardType='default'
           value={expirationDate}
           onChangeText={(text) => setExpirationDate(text)}
         />
