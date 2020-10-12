@@ -17,12 +17,11 @@ export const ContainerInput = styled.View`
   padding: 0px 26px 18px;
 `;
 
-
 export const Input = styled.TextInput`
-  width: 360px;
+  width: 300px;
   height: 52px;
   font-size: 16px;
-  margin-top: 14px;
+  margin: 14px 28px;
   padding-top: 22px;
   
   border-bottom-width: 1px;

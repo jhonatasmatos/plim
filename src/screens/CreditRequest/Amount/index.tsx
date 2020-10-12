@@ -6,7 +6,8 @@ import {
   ContainerText,
   Text,
   ContainerInput,
-  InputText,
+  Cifrao,
+  Input,
   ContainerPicker,
   Picker,
   TextPercent,
@@ -50,7 +51,8 @@ const Amount: React.FC = () => {
         </ContainerText>
 
         <ContainerInput>
-          <InputText
+          <Cifrao>R$</Cifrao>
+          <Input 
             keyboardType='numeric'
             value={amount}
             onChangeText={(text) => setAmount(text)}
@@ -67,8 +69,18 @@ const Amount: React.FC = () => {
             onValueChange={(itemValue, itemIndex) =>
               setSelectedValue(itemValue as string)}
           >
-            <Picker.Item label="5 vezes de R$ 1.159,27" value="value_1" />
-            <Picker.Item label="1 vezes de R$ 5.000,00" value="value_2" />
+            <Picker.Item label="1 x R$ 5.155,00" value="value_1" />
+            <Picker.Item label="2 x R$ 2.652,50" value="value_2" />
+            <Picker.Item label="3 x R$ 1.818,33" value="value_3" />
+            <Picker.Item label="4 x R$ 1.401,25" value="value_4" />
+            <Picker.Item label="5 x R$ 1.151,00" value="value_5" />
+            <Picker.Item label="6 x R$ 984,16" value="value_6" />
+            <Picker.Item label="7 x R$ 865,00" value="value_7" />
+            <Picker.Item label="8 x R$ 775,62" value="value_8" />
+            <Picker.Item label="9 x R$ 706,11" value="value_9" />
+            <Picker.Item label="10 x R$ 650,50" value="value_10" />
+            <Picker.Item label="11 x R$ 605,00" value="value_11" />
+            <Picker.Item label="12 x R$ 567,08" value="value_12" />
           </Picker>
         </ContainerPicker>
         <TextPercent>taxa de 3% a.m</TextPercent>
