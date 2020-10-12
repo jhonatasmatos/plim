@@ -31,7 +31,7 @@ const Description: React.FC = () => {
 
   const handleContinue = useCallback(
     () => {
-      navigation.navigate('Description');
+      navigation.navigate('Photo');
     },
     [navigation]
   );
