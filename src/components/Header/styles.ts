@@ -5,12 +5,14 @@ export const Container = styled.View`
   height: 54px;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 16px;
+  padding: 16px 16px 16px 32px;
+
+  background-color: #E5E5E5;
 `;
 
 export const Title = styled.Text`
-  font-size: 18px;
-  font-weight: 700;
+  font-family: 'TitilliumWeb-Bold';
+  font-size: 22px;
 `;
 
 export const ContainerPhoto = styled.TouchableOpacity`

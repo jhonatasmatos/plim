@@ -43,6 +43,7 @@ export const ContentCompany = styled.View`
 `;
 
 export const Title = styled.Text`
+  font-family: 'TitilliumWeb-Bold';
   font-size: 24px;
   text-align: center;
 
@@ -50,9 +51,10 @@ export const Title = styled.Text`
 `;
 
 export const Description = styled.Text`
+  font-family: 'Poppins-Regular';
   font-size: 16px;
-  padding-top: 32px;
-  padding-bottom: 46px;
+  padding-top: 18px;
+  padding-bottom: 26px;
 
   text-align: justify;
 `;
@@ -65,15 +67,17 @@ export const CompanyInfo= styled.View`
 `;
 
 export const Label= styled.Text`
+  font-family: 'Poppins-SemiBold';
   font-size: 16px;
-  font-weight: 700;
 `;
 
 export const CompanyAmount = styled.Text`
+  font-family: 'Poppins-Regular';
   font-size: 16px;
 `;
 
 export const CompanyInstallment = styled.Text`
+  font-family: 'Poppins-Regular';
   font-size: 16px;
 `;
 
@@ -96,6 +100,7 @@ export const ButtonGoBack = styled(RectButton)`
 `;
 
 export const ButtonTextGoBack = styled.Text`
+  font-family: 'Poppins-SemiBold';
   font-size: 16px;
   color: #F70F5D;
 `;
@@ -112,6 +117,7 @@ export const ButtonContribute = styled(RectButton)`
 `;
 
 export const ButtonTextContribute = styled.Text`
+  font-family: 'Poppins-SemiBold';
   font-size: 16px;
   color: #fff;
 `;

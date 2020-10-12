@@ -51,21 +51,24 @@ export const CompanyInfo= styled.View`
 `;
 
 export const Label= styled.Text`
+  font-family: 'Poppins-Regular';
   font-size: 16px;
 `;
 
 export const CompanyTitle = styled.Text`
+  font-family: 'TitilliumWeb-Bold';
   font-size: 18px;
-  font-weight: 700;
 
   padding: 10px 180px 7px 18px;
 `;
 
 export const CompanyAmount = styled.Text`
+  font-family: 'Poppins-Regular';
   font-size: 16px;
 `;
 
 export const CompanyInstallment = styled.Text`
+  font-family: 'Poppins-Regular';
   font-size: 16px;
 `;
 
@@ -88,6 +91,7 @@ export const ButtonViewMore = styled(RectButton)`
 `;
 
 export const ButtonTextViewMore = styled.Text`
+  font-family: 'Poppins-SemiBold';
   font-size: 16px;
   color: #F70F5D;
 `;
@@ -104,6 +108,8 @@ export const ButtonContribute = styled(RectButton)`
 `;
 
 export const ButtonTextContribute = styled.Text`
+  font-family: 'Poppins-SemiBold';
   font-size: 16px;
-  color: #fff;
+  color: #EEEDFF;
+
 `;
