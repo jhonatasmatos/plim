@@ -1,54 +1,65 @@
 import styled from 'styled-components/native';
 import { RectButton } from 'react-native-gesture-handler';
-import { Picker as Selected } from '@react-native-community/picker';
 
 export const Container = styled.View`
   flex: 1;
-  background-color: #E5E5E5;
-`
 
-export const ContainerText = styled.View`
+  /* align-items: center; */
+
+  background-color: #E5E5E5;
+`;
+
+export const ContainerImage = styled.View`
+  width: 360px;
+  height: 180px;
+  border-radius: 16px;
+
+  justify-content: center;
+  align-items: center;
+
   margin-top: 32px;
-  padding: 0 35px;
-`
+  margin: 0px 26px;
+
+  background-color: #d3d3d3;
+`;
+
+export const Title = styled.Text`
+  font-family: 'Poppins-SemiBold';
+  font-size: 18px;
+
+  padding: 10px 210px 10px 24px;
+`;
 
 export const Text = styled.Text`
   font-family: 'Poppins-Regular';
   font-size: 16px;
-  padding-top: 16px;
-`
 
-export const ContainerInput = styled.View`
-  margin-top: 16px;
-  padding: 0 35px;
-`
+  padding: 0px 26px;
+`;
 
-export const InputText = styled.TextInput`
+export const CompanyInfo= styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+
+  padding: 6px 28px;
+`;
+
+export const Label= styled.Text`
+  font-family: 'Poppins-SemiBold';
   font-size: 16px;
-  text-align: right;
-  padding: 0 10px;
-  
-  border-bottom-width: 1px;
-`
+`;
 
-export const ContainerPicker = styled.View`
-  margin: 5px 35px 0px;
+export const CompanyAmount = styled.Text`
+  font-family: 'Poppins-Regular';
+  font-size: 16px;
+`;
 
-  border-bottom-width: 1px;
-`
+export const CompanyInstallment = styled.Text`
+  font-family: 'Poppins-Regular';
+  font-size: 16px;
+`;
 
-export const Picker = styled(Selected)`
-  border: 1px solid;
-`
-
-export const TextPercent = styled.Text`
-  font-size: 14px;
-  text-align: right;
-
-  padding: 4px 35px;
-`
-
-export const ContainerAttention = styled.View`
+export const ContainerTextConfirm = styled.View`
   margin: 32px 42px;
 
   padding-left: 10px;
@@ -60,21 +71,19 @@ export const ContainerAttention = styled.View`
 
   border-left-width: 2px;
   border-color:  #F70F5D;
-`
+`;
 
-export const TextAttention = styled.Text`
+export const TextConfirm = styled.Text`
   font-family: 'Poppins-SemiBold';
   font-size: 16px;
-`
+`;
 
 export const ContainerButton = styled.View`
   width: 100%;
   flex-direction: row;
   justify-content: space-around;
 
-
-  position: absolute;
-  bottom: 26px;
+  margin: 26px 0px;
 `;
 
 export const ButtonGoBack = styled(RectButton)`

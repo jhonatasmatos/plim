@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState, useCallback } from 'react';
 import {useNavigation} from '@react-navigation/native';
 
 import {
@@ -13,8 +13,10 @@ import {
   ContainerAttention,
   TextAttention,
   ContainerButton,
-  Button,
-  TextButton,
+  ButtonGoBack,
+  ButtonTextGoBack,
+  ButtonContinue,
+  ButtonTextContinue
 } from './styles';
 
 import Header from '../../../components/Header';
@@ -25,54 +27,73 @@ const Amount: React.FC = () => {
 
   const navigation = useNavigation();
 
-  async function handleContinue(): Promise<void> {
-    navigation.navigate('Description');
-  }
+  const handleGoBack= useCallback(
+    () => {
+      navigation.goBack();
+    },
+    [navigation]
+  );
+
+  const handleContinue = useCallback(
+    () => {
+      navigation.navigate('Description');
+    },
+    [navigation]
+  );
 
   return (
-    <Container>
-      <Header />
+    <>
+      <Header title='Solicitação de micro crédito' />
+      <Container>
+        <ContainerText>
+          <Text>De quanto você precisa?</Text>
+        </ContainerText>
 
-      <ContainerText>
-        <Text>De quanto você precisa?</Text>
-      </ContainerText>
+        <ContainerInput>
+          <InputText
+            keyboardType='numeric'
+            value={amount}
+            onChangeText={(text) => setAmount(text)}
+          />
+        </ContainerInput>
 
-      <ContainerInput>
-        <InputText
-          keyboardType='numeric'
-          value={amount}
-          onChangeText={(text) => setAmount(text)}
-        />
-      </ContainerInput>
+        <ContainerText>
+          <Text>Forma de pagamento:</Text>
+        </ContainerText>
 
-      <ContainerText>
-        <Text>Prentende pagar em quantas vezes?</Text>
-      </ContainerText>
+        <ContainerPicker>
+          <Picker
+            selectedValue={selectedValue}
+            onValueChange={(itemValue, itemIndex) =>
+              setSelectedValue(itemValue as string)}
+          >
+            <Picker.Item label="5 vezes de R$ 1.159,27" value="value_1" />
+            <Picker.Item label="1 vezes de R$ 5.000,00" value="value_2" />
+          </Picker>
+        </ContainerPicker>
+        <TextPercent>taxa de 3% a.m</TextPercent>
 
-      <ContainerPicker>
-        <Picker
-          selectedValue={selectedValue}
-          onValueChange={(itemValue, itemIndex) =>
-            setSelectedValue(itemValue as string)}
-        >
-          <Picker.Item label="5 vezes de R$ 1.159,27" value="value_1" />
-          <Picker.Item label="1 vezes de R$ 5.000,00" value="value_2" />
-        </Picker>
-      </ContainerPicker>
-      <TextPercent>taxa de 3% a.m</TextPercent>
+        <ContainerAttention>
+          <TextAttention>
+            Atenção!! Em caso de inadimplência juros de 0,03% ao dia + multa de 2%.
+          </TextAttention>
+        </ContainerAttention>
 
-      <ContainerAttention>
-        <TextAttention>
-          Atençao!! Toda e qualquer inadimplencia sera cobrada juros a parte.
-        </TextAttention>
-      </ContainerAttention>
+        <ContainerButton>
+          <ButtonGoBack onPress={handleGoBack}>
+            <ButtonTextGoBack>
+              VOLTAR
+            </ButtonTextGoBack>
+          </ButtonGoBack>
 
-      <ContainerButton>
-        <Button onPress={handleContinue}>
-          <TextButton>Continuar solicitação</TextButton>
-        </Button>
-      </ContainerButton>
-    </Container>
+          <ButtonContinue onPress={handleContinue}>
+            <ButtonTextContinue>
+              CONTINUAR
+            </ButtonTextContinue>
+          </ButtonContinue>
+        </ContainerButton>
+      </Container>
+    </>
   );
 };
 

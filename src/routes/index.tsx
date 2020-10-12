@@ -6,8 +6,22 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Splash from '../screens/Splash';
 import First from '../screens/First';
 
+import License from '../screens/CreditRequest/License';
+import Profile from '../screens/CreditRequest/Profile';
+import Historic from '../screens/CreditRequest/Historic';
 import Amount from '../screens/CreditRequest/Amount';
 import Description from '../screens/CreditRequest/Description';
+import Photo from '../screens/CreditRequest/Photo';
+import ConfirmInfos from '../screens/CreditRequest/ConfirmInfos';
+import CongratsRequest from '../screens/CreditRequest/CongratsRequest';
+
+import Dashboard from '../screens/Dashboard';
+import CancelReturn from '../screens/Cancel/CancelReturn';
+import CongratsCancel from '../screens/Cancel/CongratsCancel';
+
+import Reading from '../screens/WithdrawMoney/Reading';
+import PixId from '../screens/WithdrawMoney/PixId';
+import CongratsWithdraw from '../screens/WithdrawMoney/CongratsWithdraw';
 
 import List from '../screens/CreditContribution/EntrepreneursList';
 import DetailCompany from '../screens/CreditContribution/DetailCompany';
@@ -23,9 +37,22 @@ const Routes: React.FC = () => (
     <App.Navigator screenOptions={{ headerShown: false }}>
       <App.Screen name="Splash" component={Splash} />
       <App.Screen name="First" component={First} />
+      <App.Screen name="License" component={License} />
+      <App.Screen name="Profile" component={Profile} />
+      <App.Screen name="Historic" component={Historic} />
+      <App.Screen name="Amount" component={Amount} />
+      <App.Screen name="Description" component={Description} />
+      <App.Screen name="Photo" component={Photo} />
+      <App.Screen name="ConfirmInfos" component={ConfirmInfos} />
+      <App.Screen name="CongratsRequest" component={CongratsRequest} />
 
-      {/* <App.Screen name="Amount" component={Amount} />
-      <App.Screen name="Description" component={Description} /> */}
+      <App.Screen name="Dashboard" component={Dashboard} />
+      <App.Screen name="CancelReturn" component={CancelReturn} />
+      <App.Screen name="CongratsCancel" component={CongratsCancel} />
+
+      <App.Screen name="Reading" component={Reading} />
+      <App.Screen name="PixId" component={PixId} />
+      <App.Screen name="CongratsWithdraw" component={CongratsWithdraw} />
 
       <App.Screen name="List" component={List} />
       <App.Screen name="DetailCompany" component={DetailCompany} />
